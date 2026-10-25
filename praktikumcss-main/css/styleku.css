@@ -89,6 +89,16 @@ body {
     text-align: justify;
 }
 
+.isi p:first-of-type::first-letter {
+    font-size: 3em;
+    font-weight: bold;
+    color: #355c3b;
+    float: left;
+    line-height: 1;
+    padding-right: 6px;
+    padding-top: 4px;
+}
+
 .jawa {
     color: #477348;
     font-weight: bold;
