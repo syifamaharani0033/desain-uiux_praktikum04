@@ -2,295 +2,214 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Khasiat dan informasi buah alpukat">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpukat</title>
-    <meta name="description" content="Khasiat alpukat">
 
     <style>
-        /* Pengaturan halaman */
         body {
-            background-color: rgb(209, 239, 190);
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            padding: 10px 20px;
-            line-height: 1.6;
+            background-color: lightblue;
+            font-family: "Lucida Sans", Verdana, sans-serif;
+            margin: 0;
+            padding: 10px 24px;
         }
 
-        /* Judul utama */
         h1 {
             text-align: center;
-            color: rgb(25, 25, 94);
+            color: blueviolet;
         }
 
-        h2 {
-            color: darkgreen;
-        }
-
-        /* Paragraf */
         p {
+            width: fit-content;
+            margin: 10px auto;
             text-align: justify;
+            line-height: 1.5;
         }
 
-        /* Bagian khasiat alpukat */
-        .khasiat {
-            background-color: #edf4e8;
-            width: 85%;
-            max-width: 900px;
-            margin: 35px auto;
-            padding: 25px;
-            color: #35543a;
-            border: 1px solid #d4e3cc;
-            border-radius: 20px;
-            box-shadow: 0 6px 18px rgba(53, 84, 58, 0.10);
-            box-sizing: border-box;
-        }
-
-        /* Judul bagian */
-        .khasiat h3 {
-            text-align: center;
-            color: #294e37;
-            font-size: 25px;
-            margin: 0 0 8px;
-        }
-
-        /* Subjudul */
-        .khasiat .subjudul {
-            text-align: center;
-            color: #71866d;
-            font-size: 14px;
-            margin: 0 0 22px;
-        }
-
-        /* Susunan daftar menjadi grid */
-        .khasiat ol {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 15px;
-            list-style: none;
-            counter-reset: vitamin;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Kartu setiap vitamin */
-        .khasiat li {
-            counter-increment: vitamin;
-            position: relative;
-            background-color: #ffffff;
-            padding: 20px 18px 20px 58px;
-            border-radius: 14px;
-            border: 1px solid #e0ead9;
-            box-shadow: 0 3px 8px rgba(53, 84, 58, 0.06);
-            box-sizing: border-box;
-            transition: transform 0.2s ease,
-                        box-shadow 0.2s ease;
-        }
-
-        /* Lingkaran nomor vitamin */
-        .khasiat li::before {
-            content: counter(vitamin);
-            position: absolute;
-            left: 15px;
-            top: 18px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #e3eedc;
-            color: #355c3b;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Nama vitamin */
-        .khasiat li strong {
-            display: block;
-            color: #355c3b;
-            font-size: 16px;
-            margin-bottom: 6px;
-        }
-
-        /* Efek ketika kartu disentuh mouse */
-        .khasiat li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(53, 84, 58, 0.12);
-        }
-
-        /* Tampilan HP */
-        @media (max-width: 600px) {
-            .khasiat {
-                width: 100%;
-                padding: 18px;
-            }
-
-            .khasiat h3 {
-                font-size: 21px;
-            }
-
-            .khasiat ol {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Gambar utama */
         .center {
-            width: 200px;
-            max-width: 100%;
-            height: auto;
+            width: 50%;
+            height: 250px;
+            object-fit: contain;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 15px auto;
+            border: none;
         }
 
-        /* Semua gambar */
         img {
             border: 2px solid navy;
-            border-radius: 20px;
+            border-radius: 25px;
         }
 
-        /* Galeri foto alpukat */
-        .foto {
-            background-color: rgb(129, 167, 123);
-            padding: 15px;
+        /* BAGIAN KHASIAT */
+        .khasiat {
+            background-color: bisque;
+            width: 80%;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .khasiat h3 {
             text-align: center;
-            border-radius: 10px;
+            margin-top: 0;
+        }
+
+        .khasiat ol {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 20px;
+            padding-left: 25px;
+            font-size: 12px;
+        }
+
+        /* BAGIAN GALERI FOTO */
+        .foto {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 5px;
+            padding: 0;
+            margin-top: 0;
         }
 
         .foto img {
             width: 23%;
-            max-width: 220px;
-            height: auto;
-            margin: 5px;
+            height: 250px;
+            object-fit: cover;
+            box-sizing: border-box;
         }
 
-        /* Bagian promosi */
+        /* BAGIAN PROMO */
         .promo {
             text-align: center;
             color: red;
-            margin: 25px 0;
+            margin: 10px auto 35px;
         }
 
         .promo h2 {
-            color: red;
+            font-size: 18px;
         }
 
-        .promo strong {
-            font-size: 24px;
+        .promo h3 {
+            font-size: 17px;
         }
 
-        /* Bagian COD */
+        /* BAGIAN COD */
         .cod {
-            background-color: chartreuse;
+            align: center;
+            text-align: center;
+            font-weight: bold;
+            background-color: rgb(2, 255, 255);
+            color: rgb(0, 0, 255);
             width: 80%;
-            margin: 20px auto;
-            padding: 10px;
-            text-align: center;
-            border: 2px solid green;
-            border-radius: 10px;
+            margin: auto;
+            margin-left:auto;
+            margin-right:auto;
+            box-shadow: 0 3px 6px #999;
+            font-size: 11px;
+            line-height: 1.5;
+            box-sizing: border-box;
         }
 
-        .cod p {
+        .cod p{
+            background-color: aqua;
+            border: 1px dotted red;
             text-align: center;
             font-weight: bold;
+            color: blue;
         }
 
-        /* Tombol pesan sekarang */
-        #tombol {
-            display: block;
-            margin: 25px auto;
-            padding: 14px 30px;
-
-            background-color: #355c3b;
-            color: white;
-
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 1px;
-
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-
-            /* Bayangan awal */
-            box-shadow: 0 5px 0 #234329,
-                        0 8px 15px rgba(35, 67, 41, 0.2);
-
-            /* Animasi halus */
-            transition: all 0.2s ease;
-        }
-
-        /* Efek saat disentuh mouse */
-        #tombol:hover {
-            background-color: #47784f;
-            transform: translateY(-3px);
-
-            box-shadow: 0 8px 0 #234329,
-                        0 12px 20px rgba(35, 67, 41, 0.3);
-        }
-
-        /* Efek saat diklik atau ditekan */
-        #tombol:active {
-            transform: translateY(4px);
-
-            box-shadow: 0 1px 0 #234329,
-                        0 3px 6px rgba(35, 67, 41, 0.2);
-        }
-
-        /* Efek fokus keyboard */
-        #tombol:focus-visible {
-            outline: 3px solid #a2c78c;
-            outline-offset: 4px;
-        }
-
-        /* Tabel harga */
-        table {
+        /* TABEL HARGA */
+        .tabel-harga {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
             background-color: white;
+            font-size: 13px;
+            margin-top: 12px;
         }
 
-        th, td {
-            border: 1px solid darkgreen;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: rgb(25, 94, 45);
+        .tabel-harga th {
+            background-color: #579bd2;
             color: white;
         }
 
-        tbody tr:nth-child(odd) {
-            background-color: rgb(209, 239, 190);
+        .tabel-harga th,
+        .tabel-harga td {
+            border: 1px solid #333;
+            padding: 5px;
+            text-align: center;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: rgb(240, 255, 230);
+        .tabel-harga tbody tr:nth-child(odd) {
+            background-color: #dce9f5;
         }
 
-        /* Tampilan layar kecil */
+        /* TOMBOL PESAN */
+        .pesan {
+            text-align: center;
+            margin: 35px 0 15px;
+        }
+
+        #tombol {
+            background: rgb(252, 252, 2);
+            color: rgb(202, 24, 24);
+            border: none;
+            border-radius: 0px;
+            padding: 5px 5px;
+            font-weight: bold;
+            font-family: "Lucida Sans", Verdana, sans-serif;
+            font-size: 16px;
+            box-shadow: 0 3px 6px #999;
+            cursor: pointer;
+        }
+
+        #tombol:hover {
+            opacity: 0.85;
+        }
+
+        /* Tampilan HP */
         @media (max-width: 600px) {
             body {
                 padding: 10px;
             }
 
-            .khasiat,
-            .cod {
-                width: auto;
+            p {
+                width: 95%;
+            }
+
+            .khasiat {
+                width: 100%;
+            }
+
+            .khasiat ol {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .foto {
+                flex-wrap: wrap;
             }
 
             .foto img {
-                width: 42%;
+                width: 48%;
+                height: 160px;
             }
 
-            table {
-                font-size: 12px;
+            .center {
+                max-width: 90%;
+                height: auto;
+                aspect-ratio: 1 / 1;
             }
 
-            th, td {
-                padding: 5px;
+            .tabel-harga {
+                font-size: 10px;
+            }
+
+            .tabel-harga th,
+            .tabel-harga td {
+                padding: 4px 2px;
             }
         }
     </style>
@@ -300,132 +219,107 @@
 
     <h1>Alpukat Buah Nikmat Kaya Manfaat</h1>
 
-    <img class="center"
-         src="images/alpukat.jpg"
-         alt="Buah alpukat">
+    <img class="center" src="images/alpukat.jpg" alt="Buah alpukat">
 
     <p>
-        Alpukat merupakan jenis buah yang memiliki kandungan lemak tinggi, sekitar 20 kali lebih tinggi dibanding buah-buahan lain. Nama latin tanaman alpukat adalah Persea americana, diyakini berasal dari Amerika Tengah. Buah ini dikenalkan ke Indonesia oleh Hindia Belanda sekitar tahun 1920-1930. Belanda saat itu membawa alpukat ke Indonesia untuk memenuhi kebutuhan lemak masyarakat yang tinggal di pegunungan.
+        Alpukat merupakan jenis buah yang memiliki kandungan lemak tinggi,
+        sekitar 20 kali lebih tinggi dibanding buah-buahan lain.
+        Nama latin tanaman alpukat adalah Persea americana, diyakini berasal
+        dari Amerika Tengah. Buah ini dikenalkan ke Indonesia oleh Hindia
+        Belanda sekitar tahun 1920-1930. Belanda saat itu membawa alpukat
+        ke Indonesia untuk memenuhi kebutuhan lemak masyarakat yang tinggal
+        di pegunungan.
     </p>
 
     <p>
-        Di Indonesia, tanaman alpukat masih merupakan tanaman pekarangan, belum dibudidayakan dalam skala usahatani. Daerah penghasil alpukat adalah Jawa Barat,Jawa Timur, sebagian Sumatera, Sulawesi Selatan, dan Nusa Tenggara.
+        Di Indonesia, tanaman alpukat masih merupakan tanaman pekarangan,
+        belum dibudidayakan dalam skala usahatani. Daerah penghasil alpukat
+        adalah Jawa Barat, Jawa Timur, sebagian Sumatera, Sulawesi Selatan,
+        dan Nusa Tenggara.
     </p>
 
     <p>
-        Pohon Alpukat, dengan batang mencapai tinggi 20 m dengan daun sepanjang 12 hingga 25 cm. Bunganya tersembunyi dengan warna hijau kekuningan dan ukuran 5 hingga 10 milimeter. Ukurannya bervariasi dari 7 hingga 20 sentimeter, dengan massa 100 hingga 1000 gram; biji yang besar, 5 hingga 6,4 sentimeter.
+        Pohon alpukat dapat mencapai tinggi 20 meter dengan daun sepanjang
+        12 hingga 25 cm. Bunganya tersembunyi dengan warna hijau kekuningan
+        dan ukuran 5 hingga 10 milimeter. Ukuran buah bervariasi dari 7
+        hingga 20 sentimeter, dengan massa 100 hingga 1000 gram.
     </p>
 
-    <img class="center"
-         src="images/jusalpukat.png"
-         alt="Jus alpukat">
+    <img class="center" src="images/jusalpukat.png" alt="Jus alpukat">
 
     <p>
-        Jus alpukat termasuk salah satu minuman yang banyak digemari. Buah hijau satu ini memang dikenal lezat dan sehat. Dilansir dari medicalnewstoday.com, alpukat mengandung berbagai jenis vitamin, asam folat, magnesium, hingga potassium. Alpukat juga cocok dikonsumsi saat diet karena nggak bikin gendut.
+        Jus alpukat termasuk salah satu minuman yang banyak digemari.
+        Buah hijau satu ini dikenal lezat dan sehat. Alpukat mengandung
+        berbagai jenis vitamin, asam folat, magnesium, hingga potassium.
     </p>
 
     <p>
-        Dalam satu sajian buah alpukat (sekitar 50 gram) terdapat mengandung 80 kalori, 8 gram lemak, 4 gram karbohidrat dan sekitar 1 gram protein. Selain itu terdapat juga berbagai macam vitamin seperti E, K, B5 dan B6.
+        Dalam satu sajian buah alpukat sekitar 50 gram terdapat sekitar
+        80 kalori, 8 gram lemak, 4 gram karbohidrat, dan 1 gram protein.
+        Selain itu, terdapat berbagai macam vitamin seperti E, K, B5,
+        dan B6.
     </p>
 
-    <!-- Bagian khasiat alpukat -->
+    <!-- KHASIAT ALPUKAT -->
     <div class="khasiat">
-
-        <h3>🌿 Berikut Khasiat Buah Alpukat:</h3>
-
-        <p class="subjudul">
-            Kenali nutrisi dan manfaatnya bagi tubuh
-        </p>
+        <h3>Berikut khasiat buah Alpukat:</h3>
 
         <ol>
             <li>
-                <strong>Vitamin E</strong>
-                Membantu melindungi sel dan mendukung kesehatan kulit.
+                Vitamin E, memiliki antioksidan yang membantu melindungi
+                kulit.
             </li>
-
             <li>
-                <strong>Vitamin K</strong>
-                Berperan dalam pembekuan darah dan kesehatan tulang.
+                Vitamin K, membantu menjaga kesehatan tulang.
             </li>
-
             <li>
-                <strong>Vitamin B5</strong>
-                Membantu tubuh mengolah makanan menjadi energi.
+                Vitamin B5, membantu tubuh mengolah energi.
             </li>
-
             <li>
-                <strong>Vitamin B6</strong>
-                Berperan dalam metabolisme protein dan fungsi sistem saraf.
+                Vitamin B6, membantu metabolisme protein dan fungsi saraf.
             </li>
         </ol>
     </div>
 
-    <!-- Galeri berbagai jenis alpukat -->
-    <h2>Galeri Jenis Buah Alpukat</h2>
-
+    <!-- GALERI EMPAT FOTO -->
     <div class="foto">
+        <img src="images/alpukat_miki.png" alt="Alpukat Miki">
 
-        <img src="images/alpukat_miki.png"
-             alt="Alpukat miki">
+        <img src="images/alpukat_mentega.png" alt="Alpukat Mentega">
 
-        <img src="images/alpukat_mentega.png"
-             alt="Alpukat mentega">
+        <img src="images/alpukat_kendil.png" alt="Alpukat Kendil">
 
-        <img src="images/alpukat_kendil.png"
-             alt="Alpukat kendil">
-
-        <img src="images/alpukat_aligator.png"
-             alt="Alpukat aligator">
-
+        <img src="images/alpukat_aligator.png" alt="Alpukat Aligator">
     </div>
 
-    <!-- Bagian promosi -->
+    <!-- PROMO -->
     <div class="promo">
-
         <h2>
-            Anda Ingin Buah Alpukat?
-            <br>
+            Anda ingin Buah Alpukat?<br>
             Penawaran Khusus Bagi Anda
         </h2>
 
         <h3>
-            Harga 1 Kg
-            <del>Rp35.000</del>
-            <br>
-            Nah, sekarang <strong>Rp25.000</strong> saja!
-            <br>
-            Gimana? Tertarik?
+            Harga 1 Kg<br>
+            <del>Rp. 35.000</del><br>
+            Nah sekarang <strong>Rp. 25.000</strong> saja<br>
+            Gimana? Tertarik!
         </h3>
-
     </div>
 
-    <!-- Informasi pembayaran -->
+    <!-- INFORMASI COD -->
     <div class="cod">
-
-        <p>
-            PEMBAYARAN DI TEMPAT / COD
-            <br>
-            Hanya untuk Jakarta, Bekasi, dan Depok
-            <br>
-            POTONGAN ONGKIR Rp5.000
-            <br>
-            Untuk pembelian via transfer
-        </p>
-
+        PEMBAYARAN DI TEMPAT / COD<br>
+        Hanya untuk Jakarta, Bekasi dan Depok<br>
+        POTONGAN ONGKIR Rp. 5.000,-<br>
+        UNTUK PEMBELIAN VIA TRANSFER
     </div>
 
-    <!-- Tombol pemesanan -->
-    <button id="tombol" type="button">
-        PESAN SEKARANG
-    </button>
-
-    <!-- Tabel daftar harga -->
-    <h2>Daftar Harga Buah Alpukat</h2>
-
-    <table>
+    <!-- TABEL HARGA -->
+    <table class="tabel-harga">
         <thead>
             <tr>
-                <th>No.</th>
+                <th>No</th>
                 <th>Jenis Alpukat</th>
                 <th>Harga 1 Kg</th>
                 <th>Harga 2 Kg</th>
@@ -437,35 +331,43 @@
             <tr>
                 <td>1</td>
                 <td>Alpukat Mentega</td>
-                <td>Rp35.000</td>
-                <td>Rp65.000</td>
-                <td>Rp90.000</td>
+                <td>Rp. 35.000,-</td>
+                <td>Rp. 65.000,-</td>
+                <td>Rp. 90.000,-</td>
             </tr>
 
             <tr>
                 <td>2</td>
                 <td>Alpukat Miki</td>
-                <td>Rp50.000</td>
-                <td>Rp90.000</td>
-                <td>Rp135.000</td>
+                <td>Rp. 50.000,-</td>
+                <td>Rp. 90.000,-</td>
+                <td>Rp. 135.000,-</td>
             </tr>
 
             <tr>
                 <td>3</td>
                 <td>Alpukat Aligator</td>
-                <td>Rp30.000</td>
-                <td>Rp55.000</td>
-                <td>Rp80.000</td>
+                <td>Rp. 30.000,-</td>
+                <td>Rp. 55.000,-</td>
+                <td>Rp. 80.000,-</td>
             </tr>
 
             <tr>
                 <td>4</td>
                 <td>Alpukat Kendil</td>
-                <td>Rp40.000</td>
-                <td>Rp75.000</td>
-                <td>Rp100.000</td>
+                <td>Rp. 40.000,-</td>
+                <td>Rp. 75.000,-</td>
+                <td>Rp. 100.000,-</td>
             </tr>
         </tbody>
     </table>
+
+    <!-- TOMBOL -->
+    <div class="pesan">
+        <button id="tombol" onclick="alert('Silakan hubungi penjual untuk memesan alpukat!')">
+            PESAN SEKARANG
+        </button>
+    </div>
+
 </body>
 </html>
